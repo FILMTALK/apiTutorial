@@ -1,3 +1,4 @@
+```js
 //PREPARACIÓN ===============================================================
 
 //Definición de las dependencias
@@ -54,3 +55,4 @@ app.get("/pelicula/:titulo", function(req, res) {
 // ARRANQUE DEL SERVIDOR ======================================================================
 app.listen(port);
 console.log('The magic happens on port ' + port);
+```
