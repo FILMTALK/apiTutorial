@@ -33,52 +33,61 @@
       <section id="main_content" class="inner">
         <p>//PREPARACIÓN ===============================================================</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-c">//Definición de las dependencias var express = require('express'); var request = require('request');</span>
+<p>//Definición de las dependencias
+var express  = require('express');
+var request = require('request');</p>
 
-<span class="pl-s">var</span> app <span class="pl-k">=</span> express(); <span class="pl-s">var</span> port <span class="pl-k">=</span> <span class="pl-sv">process</span>.env.PORT <span class="pl-k">||</span> <span class="pl-c1">3000</span>;
+<p>var app      = express(); 
+var port     = process.env.PORT || 3000;</p>
 
-<span class="pl-c">// Rutas app.get("/cartelera", function(req, res) {</span>
+<p>// Rutas
+app.get("/cartelera", function(req, res) {</p>
 
-<span class="pl-s">var</span> url<span class="pl-k">=</span><span class="pl-s1"><span class="pl-pds">'</span>http://filmdate-filmdate.rhcloud.com/api/api.php/getCartelera<span class="pl-pds">'</span></span>;
+<pre><code>var url='http://filmdate-filmdate.rhcloud.com/api/api.php/getCartelera';
 
-<span class="pl-s">var</span> request <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>request<span class="pl-pds">'</span></span>);
+var request = require('request');
 
-request({url<span class="pl-k">:</span>url, json<span class="pl-k">:</span><span class="pl-s1"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>}, <span class="pl-st">function</span> (<span class="pl-vpf">error</span>, <span class="pl-vpf">response</span>, <span class="pl-vpf">body</span>) {
+request({url:url, json:"true"}, function (error, response, body) {
 
-    <span class="pl-k">if</span> (<span class="pl-k">!</span>error <span class="pl-k">&amp;&amp;</span> response.statusCode <span class="pl-k">==</span> <span class="pl-c1">200</span>) {
+    if (!error &amp;&amp; response.statusCode == 200) {
 
-        <span class="pl-en">console</span><span class="pl-s3">.log</span>(body);
+        console.log(body);
         res.json(body);
     }
-    <span class="pl-k">else</span> {
+    else {
 
-        res.json({error<span class="pl-k">:</span><span class="pl-s1"><span class="pl-pds">"</span>request error<span class="pl-pds">"</span></span>});
+        res.json({error:"request error"});
     }
 });
-});
+</code></pre>
 
-app.get(<span class="pl-s1"><span class="pl-pds">"</span>/pelicula/:titulo<span class="pl-pds">"</span></span>, <span class="pl-st">function</span>(<span class="pl-vpf">req</span>, <span class="pl-vpf">res</span>) {
+<p>});</p>
 
-<span class="pl-s">var</span> url<span class="pl-k">=</span><span class="pl-s1"><span class="pl-pds">'</span>http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/<span class="pl-pds">'</span></span><span class="pl-k">+</span>req.params.titulo;
+<p>app.get("/pelicula/:titulo", function(req, res) {</p>
 
-<span class="pl-s">var</span> request <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>request<span class="pl-pds">'</span></span>);
+<pre><code>var url='http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/'+req.params.titulo;
 
-request({url<span class="pl-k">:</span>url, json<span class="pl-k">:</span><span class="pl-s1"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>}, <span class="pl-st">function</span> (<span class="pl-vpf">error</span>, <span class="pl-vpf">response</span>, <span class="pl-vpf">body</span>) {
+var request = require('request');
 
-    <span class="pl-k">if</span> (<span class="pl-k">!</span>error <span class="pl-k">&amp;&amp;</span> response.statusCode <span class="pl-k">==</span> <span class="pl-c1">200</span>) {
+request({url:url, json:"true"}, function (error, response, body) {
 
-        <span class="pl-en">console</span><span class="pl-s3">.log</span>(body);
+    if (!error &amp;&amp; response.statusCode == 200) {
+
+        console.log(body);
         res.json(body);
     }
-    <span class="pl-k">else</span> {
+    else {
 
-        res.json({error<span class="pl-k">:</span><span class="pl-s1"><span class="pl-pds">"</span>request error<span class="pl-pds">"</span></span>});
+        res.json({error:"request error"});
     }
 });
-});
+</code></pre>
 
-<span class="pl-c">// ARRANQUE DEL SERVIDOR ====================================================================== app.listen(port); console.log('The magic happens on port ' + port);</span>
-</pre></div>
+<p>});</p>
+
+<p>// ARRANQUE DEL SERVIDOR ======================================================================
+app.listen(port);
+console.log('The magic happens on port ' + port);</p>
       </section>
     </div>
 
