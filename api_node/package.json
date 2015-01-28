@@ -1,0 +1,10 @@
+{
+  "name": "prueba",
+  "description": "Use an API request of movies",
+  "main": "server.js",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "4.x",
+    "request": "^2.45.0"
+  }
+}
