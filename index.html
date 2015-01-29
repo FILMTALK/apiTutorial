@@ -31,8 +31,23 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <div class="highlight highlight-js"><pre>
+        <h4>
+<a id="requisitos" class="anchor" href="#requisitos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requisitos</h4>
+
+<p>Se necesita crear un archivo llamado "<b>package.json</b>" para establecer las dependencias <b>express</b> y <b>request</b>.</p>
+
+<p>Para instalar esas dependencias hay que hacer un <b> sudo npm install </b> en la terminal.</p>
+
+<p>Y para ejecutar desde el terminal se utiliza el comando <b> node app.js </b>.</p>
+
+<p><br></p>
+
+<h4>
+<a id="código" class="anchor" href="#c%C3%B3digo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Código</h4>
+
+<div class="highlight highlight-js"><pre>
 <span class="pl-c">//Definición de las dependencias</span>
+
 <span class="pl-s">var</span> express  <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>express<span class="pl-pds">'</span></span>);
 <span class="pl-s">var</span> request <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>request<span class="pl-pds">'</span></span>);
 
@@ -41,6 +56,7 @@
 
 
 <span class="pl-c">// Rutas</span>
+
 app.get(<span class="pl-s1"><span class="pl-pds">"</span>/cartelera<span class="pl-pds">"</span></span>, <span class="pl-st">function</span>(<span class="pl-vpf">req</span>, <span class="pl-vpf">res</span>) {
 
     <span class="pl-c">// URL para obtener las películas en cartelera</span>
@@ -88,6 +104,7 @@ app.get(<span class="pl-s1"><span class="pl-pds">"</span>/pelicula/:titulo<span 
 });
 
 <span class="pl-c">// Arranque del servidor</span>
+
 app.listen(port);
 <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>The magic happens on port <span class="pl-pds">'</span></span> <span class="pl-k">+</span> port);</pre></div>
       </section>
