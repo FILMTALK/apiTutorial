@@ -1,3 +1,12 @@
+<h4>Requisitos</h4>
+Se necesita crear un archivo llamado "<b>package.json</b>" para establecer las dependencias <b>express</b> y <b>request</b>.
+
+Para instalar esas dependencias hay que hacer un <b> sudo npm install </b> en la terminal.
+
+Y para ejecutar desde el terminal se utiliza el comando <b> node app.js </b>.
+
+<br>
+<h4>Código</h4>
 ```js
 
 //Definición de las dependencias
